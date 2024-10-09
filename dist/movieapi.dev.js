@@ -9,14 +9,15 @@ movieDataList.addEventListener("change", function () {
   var movie = movieDataList.value;
 
   if (movie) {
-    var apiUrl = "http://www.omdbapi.com/?t=".concat(title, "&appid=").concat(APIKEY);
+    var apiUrl = "http://www.omdbapi.com/?t=".concat(movie, "&apikey=").concat(APIKEY);
     fetch(apiUrl).then(function (response) {
       return response.json();
     }).then(function (data) {
-      var movieTitle = data.title;
-      movieBox.innerHTML = "\n               <p id=\"title\">".concat(title, "</p>\n                        \n            ");
+      var movieTitle = data.Title;
+      var moviePoster = data.Poster;
+      movieBox.innerHTML = "\n               <p id=\"title\">".concat(movieTitle, "</p>\n               <img src=\"").concat(moviePoster, "\" alt=\"\">\n                        \n            ");
     })["catch"](function (error) {
       movieBox.innerHTML = "<p>Error: ".concat(error.message, "</p>");
     });
   }
-}); // http://www.omdbapi.com/?t=${title}&appid=${APIKEY}
+}); // http://www.omdbapi.com/?i=tt3896198&apikey=11edea07

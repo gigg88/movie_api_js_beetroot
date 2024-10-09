@@ -9,15 +9,17 @@ movieDataList.addEventListener("change", () => {
     const movie = movieDataList.value;
 
     if(movie) {
-        const apiUrl = `http://www.omdbapi.com/?t=${title}&appid=${APIKEY}`;
+        const apiUrl = `http://www.omdbapi.com/?t=${movie}&apikey=${APIKEY}`;
 
         fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
-            const movieTitle = data.title;
+            const movieTitle = data.Title;
+            const moviePoster = data.Poster;
 
             movieBox.innerHTML = `
-               <p id="title">${title}</p>
+               <p id="title">${movieTitle}</p>
+               <img src="${moviePoster}" alt="">
                         
             `;
         })
@@ -27,4 +29,4 @@ movieDataList.addEventListener("change", () => {
     }
 });
 
-// http://www.omdbapi.com/?t=${title}&appid=${APIKEY}
+// http://www.omdbapi.com/?i=tt3896198&apikey=11edea07
