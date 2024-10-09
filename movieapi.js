@@ -14,13 +14,18 @@ movieDataList.addEventListener("change", () => {
         fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
+
             const movieTitle = data.Title;
             const moviePoster = data.Poster;
-
+            const release_date = data.Year;
+            const overview = data.Plot;
+            
             movieBox.innerHTML = `
-               <p id="title">${movieTitle}</p>
-               <img src="${moviePoster}" alt="">
-                        
+                <h2 id="title">${movieTitle}</h2>
+                <p id="release-date">${release_date}</p>
+                <p id="overview">${overview}</p>  
+                <img src="${moviePoster}" alt="">
+                  
             `;
         })
         .catch(error => {
@@ -30,3 +35,4 @@ movieDataList.addEventListener("change", () => {
 });
 
 // http://www.omdbapi.com/?i=tt3896198&apikey=11edea07
+

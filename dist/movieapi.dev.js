@@ -15,7 +15,9 @@ movieDataList.addEventListener("change", function () {
     }).then(function (data) {
       var movieTitle = data.Title;
       var moviePoster = data.Poster;
-      movieBox.innerHTML = "\n               <p id=\"title\">".concat(movieTitle, "</p>\n               <img src=\"").concat(moviePoster, "\" alt=\"\">\n                        \n            ");
+      var release_date = data.Year;
+      var overview = data.Plot;
+      movieBox.innerHTML = "\n                <h2 id=\"title\">".concat(movieTitle, "</h2>\n                <p id=\"release-date\">").concat(release_date, "</p>\n                <p id=\"overview\">").concat(overview, "</p>  \n                <img src=\"").concat(moviePoster, "\" alt=\"\">\n                  \n            ");
     })["catch"](function (error) {
       movieBox.innerHTML = "<p>Error: ".concat(error.message, "</p>");
     });
