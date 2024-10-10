@@ -38,3 +38,8 @@ html, body {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   background-color: beige;
 }
+
+#movie_box img {
+  display: block;
+  width: 100%;
+}
