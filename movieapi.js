@@ -27,12 +27,15 @@ movieDataList.addEventListener("change", () => {
                 <img src="${moviePoster}" alt="">
                   
             `;
+            movieBox.classList.add('active');
         })
         .catch(error => {
             movieBox.innerHTML = `<p>Error: ${error.message}</p>`;
         });
+    } else {
+        movieBox.classList.remove('active');
     }
 });
 
-// http://www.omdbapi.com/?i=tt3896198&apikey=11edea07
+
 
