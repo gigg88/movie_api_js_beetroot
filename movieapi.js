@@ -9,7 +9,7 @@ movieDataList.addEventListener("change", () => {
     const movie = movieDataList.value;
 
     if(movie) {
-        const apiUrl = `http://www.omdbapi.com/?t=${movie}&apikey=${APIKEY}`;
+        const apiUrl = `https://www.omdbapi.com/?t=${movie}&apikey=${APIKEY}`;
 
         fetch(apiUrl)
         .then(response => response.json())
