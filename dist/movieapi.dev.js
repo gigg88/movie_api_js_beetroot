@@ -9,7 +9,7 @@ movieDataList.addEventListener("change", function () {
   var movie = movieDataList.value;
 
   if (movie) {
-    var apiUrl = "http://www.omdbapi.com/?t=".concat(movie, "&apikey=").concat(APIKEY);
+    var apiUrl = "https://www.omdbapi.com/?t=".concat(movie, "&apikey=").concat(APIKEY);
     fetch(apiUrl).then(function (response) {
       return response.json();
     }).then(function (data) {
