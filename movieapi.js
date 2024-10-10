@@ -32,8 +32,17 @@ movieDataList.addEventListener("change", () => {
         .catch(error => {
             movieBox.innerHTML = `<p>Error: ${error.message}</p>`;
         });
-    } else {
+        
+    } if(movie.value == '') {
         movieBox.classList.remove('active');
+
+        movieBox.innerHTML = `
+        <h2 id="title">${movieTitle}</h2>
+        <p id="release-date">${release_date}</p>
+        <p id="overview">${overview}</p>  
+        <img src="${moviePoster}" alt="">
+          
+    `;
     }
 });
 

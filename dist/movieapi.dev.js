@@ -22,7 +22,10 @@ movieDataList.addEventListener("change", function () {
     })["catch"](function (error) {
       movieBox.innerHTML = "<p>Error: ".concat(error.message, "</p>");
     });
-  } else {
+  }
+
+  if (movie.value == '') {
     movieBox.classList.remove('active');
+    movieBox.innerHTML = "\n        <h2 id=\"title\">".concat(movieTitle, "</h2>\n        <p id=\"release-date\">").concat(release_date, "</p>\n        <p id=\"overview\">").concat(overview, "</p>  \n        <img src=\"").concat(moviePoster, "\" alt=\"\">\n          \n    ");
   }
 });
